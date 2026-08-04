@@ -1,0 +1,20 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
+
+class FirebaseConfig {
+  static FirebaseOptions get currentPlatform {
+    if (defaultTargetPlatform == TargetPlatform.android) {
+      return android;
+    }
+    return android;
+  }
+
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: "A_REMPLACER_PAR_TA_VALEUR",
+    appId: "A_REMPLACER_PAR_TA_VALEUR",
+    messagingSenderId: "A_REMPLACER_PAR_TA_VALEUR",
+    projectId: "dailyearn-cm",
+    storageBucket: "dailyearn-cm.appspot.com",
+  );
+}
+￼Enter
