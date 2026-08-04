@@ -1,0 +1,20 @@
+workflows:
+  android-build:
+    name: Build Android App
+    instance_type: linux-xlarge
+    environment:
+      flutter: 3.19.0
+    scripts:
+      - name: Clean project
+        script: flutter clean
+      - name: Get dependencies
+        script: flutter pub get
+      - name: Build App Bundle
+        script: flutter build appbundle --release
+    artifacts:
+      - build/outputs/bundle/release/app-release.aab
+    publishing:
+      email:
+        recipients:
+          - ton.email@exemple.com
+
