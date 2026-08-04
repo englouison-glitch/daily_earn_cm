@@ -1,0 +1,15 @@
+workflows:
+  android-release:
+    name: Build Android Release
+    instance_type: linux-medium
+    environment:
+      flutter: 3.16.9 # version stable, très fiable
+      java: 1.8
+    scripts:
+      - flutter clean
+      - flutter pub get
+      - flutter precache --android
+      - flutter build appbundle --release --verbose
+    artifacts:
+      - build/outputs/bundle/release/app-release.aab
+
