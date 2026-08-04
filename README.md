@@ -1,1 +1,0 @@
-# daily_earn_cm
