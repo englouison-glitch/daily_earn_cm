@@ -1,0 +1,16 @@
+workflows:
+  android-build:
+    name: Créer APK DailyEarn CM
+    environment:
+      flutter: stable
+    scripts:
+      # 🛠️ CRÉE LE DOSSIER ANDROID MANQUANT — ÉTAPE LA PLUS IMPORTANTE !
+      - flutter create --platforms android .
+      # 📥 TÉLÉCHARGE TOUTES LES LIBRAIRIES
+      - flutter pub get
+      # 🚀 CONSTRUIT LE FICHIER APK FINAL À INSTALLER
+      - flutter build apk --release
+    # 📦 DIT À CODENAGIC OÙ TROUVER L'APK POUR QUE TU PUISSES LE TÉLÉCHARGER
+    artifacts:
+      - build/app/outputs/apk/release/app-release.apk
+
